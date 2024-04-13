@@ -17,11 +17,11 @@ for i in range(previousTime[1]):
 while True:
     
     if (currentTime := getTimeInList()) != previousTime:
-        if currentTime[0] != currentTime[1]:
+        if previousTime[0] != currentTime[1]:
             pass
-        if currentTime[1] != currentTime[1]:
+        if previousTime[1] != currentTime[1]:
             ledstrip[currentTime[1]] = colors[1]
-        if currentTime[2] != currentTime[2]:
+        if previousTime[2] != currentTime[2]:
             pass
         
         

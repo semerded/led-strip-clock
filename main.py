@@ -1,0 +1,25 @@
+import board, neopixel
+ledstrip = neopixel.NeoPixel(board.D18, 60, brightness = 0.1)
+
+import time
+def getTimeInList():
+    return list([int(x) for x in time.ctime().split(" ")[3].split(":")])
+
+colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]
+
+import startSequence
+startSequence.startSequence(ledstrip)
+
+previousTime = getTimeInList()
+for i in range(previousTime[1]):
+    ledstrip[i] = colors[1]
+
+while True:
+    
+    if (currentTime := getTimeInList()) != previousTime:
+        
+        
+        
+        previousTime = currentTime
+        
+    time.sleep(0.1)
